@@ -27,21 +27,17 @@ const copyBtns = document.getElementsByClassName('copy-btn')
 
 for (const copyBtn of copyBtns) {
     copyBtn.addEventListener('click', function () {
+        const copyText = copyBtn.parentNode.parentNode.children[1].children[2].innerText;
+        navigator.clipboard.writeText(copyText)
+        alert(`Number Copy: ${copyText} `)
+        console.log(copyText)
         let copyCount = getElements('copy-count').innerText
         let totalCount = Number(copyCount) + Number(1)
         getElements('copy-count').innerText = totalCount
     })
 }
 
-// call btn section
-// function getPerentName(id) {
-//     const prentElement = document.getElementById(id)
-//     const childrenElement = prentElement.children[1].innerText
-//     const childrenElement1 = prentElement.children[2].innerText
-//     alert(`${childrenElement} : ${childrenElement1}`)
-//     return;
-// }
-
+// call button section
 
 const callBtns = document.getElementsByClassName('call-btn')
 
@@ -82,14 +78,3 @@ document.getElementById('clear-btn').addEventListener('click', function () {
     const HistoryContainer = getElements('history-container')
     HistoryContainer.innerHTML = '';
 })
-
-
-
-
-// document.getElementById('call').addEventListener('click', function () {
-//     const prentElement = document.getElementById('parent')
-//     const childrenElement = prentElement.children[1].innerText
-//     const childrenElement1 = prentElement.children[2].innerText
-//     alert(childrenElement + ':' + ' ' + childrenElement1)
-//     console.log(childrenElement, childrenElement1)
-// })
