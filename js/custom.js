@@ -45,13 +45,14 @@ for (let callBtn of callBtns) {
     callBtn.addEventListener('click', function () {
         let coinCount = getElements('coin-count').innerText
         if (coinCount <= 0) {
-            alert(`Calling requires minimum 20 coins. Your available coins: ${coinCount}`);
+            alert(`❌ Calling requires minimum 20 coins. Your available coins: ${coinCount}`);
             return;
         }
         const cardtitle = callBtn.parentNode.parentNode.children[1].children[1].innerText;
         const cardNumber = callBtn.parentNode.parentNode.children[1].children[2].innerText;
 
-        alert(`Calling ${cardtitle} : ${cardNumber}`)
+        alert(`📞 Calling....
+         ${cardtitle} : ${cardNumber}`)
 
         let totalCount = Number(coinCount) - Number(20)
         getElements('coin-count').innerText = totalCount
